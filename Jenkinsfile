@@ -44,5 +44,14 @@ pipeline {
         '''
          }
       }
+        stage('Deploy using Ansible') {
+    steps {
+        sh '''
+        ansible-playbook \
+        -i ansible/environments/test/hosts \
+        ansible/playbooks/deploy.yml
+        '''
+    }
+}
     }
 }
