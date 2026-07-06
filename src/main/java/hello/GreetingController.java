@@ -19,7 +19,7 @@ public class GreetingController {
         return "Hello from DevOps pipeline";
     }
 
-     @GetMapping("/hello")
+     @GetMapping("/welcome")
     public String greeting() {
         return "Hello from DevOps pipeline it's working completly fine";
     }
