@@ -11,7 +11,7 @@ public class GreetingController {
 
     @GetMapping("/")
     public String home() {
-        return "Spring Boot App is Running";
+        return "Spring Boot App is  Running";
     }
 
     @GetMapping("/greeting")
