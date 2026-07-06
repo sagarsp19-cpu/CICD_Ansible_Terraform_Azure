@@ -19,6 +19,11 @@ public class GreetingController {
         return "Hello from DevOps pipeline";
     }
 
+     @GetMapping("/hello")
+    public String greeting() {
+        return "Hello from DevOps pipeline it's working completly fine";
+    }
+    
     @GetMapping("/sayhi")
     public Greeting sayHi(@RequestParam(value = "name", defaultValue = "World") String name) {
         return new Greeting(counter.incrementAndGet(),
