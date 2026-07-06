@@ -33,15 +33,16 @@ pipeline {
             }
         }
         stage('Deploy') {
-        steps {
-             sh '''
-             pkill -f your-app || true
-              nohup java -jar target/your-app-0.0.1-SNAPSHOT.jar \
-              --server.port=8081 \
-              --server.address=0.0.0.0 \
-              > app.log 2>&1 &
-               '''
-              }
+         steps {
+        sh '''
+        pkill -f your-app-0.0.1-SNAPSHOT.jar || true
+
+        nohup java -jar target/your-app-0.0.1-SNAPSHOT.jar \
+        --server.port=8081 \
+        --server.address=0.0.0.0 \
+        > app.log 2>&1 &
+        '''
          }
+      }
     }
 }
