@@ -18,11 +18,6 @@ public class GreetingController {
     public String greeting() {
         return "Hello from DevOps pipeline";
     }
-
-     @GetMapping("/welcome")
-    public String greeting() {
-        return "Hello from DevOps pipeline it's working completly fine";
-    }
     
     @GetMapping("/sayhi")
     public Greeting sayHi(@RequestParam(value = "name", defaultValue = "World") String name) {
