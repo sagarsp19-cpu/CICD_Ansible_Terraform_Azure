@@ -94,18 +94,18 @@ pipeline {
             }
         }
 
-        stage('Delete VM') {
-            steps {
-                echo("Provisioning VM on Azure")
-                dir("/Users/Shared/Jenkins/Home/workspace/ansible_master/terraform") {
-                    sh '''
-                            export PATH=$PATH:/usr/local/bin
-                            az login -u kalis2050@yahoo.co.in -p Dakshin893$
-                            terraform destroy -auto-approve
-                            '''
-                }
-            }
-        }
+        //stage('Delete VM') {
+          //  steps {
+            //    echo("Provisioning VM on Azure")
+              //  dir("/Users/Shared/Jenkins/Home/workspace/ansible_master/terraform") {
+                //    sh '''
+                  //          export PATH=$PATH:/usr/local/bin
+                    //        az login -u kalis2050@yahoo.co.in -p Dakshin893$
+                      //      terraform destroy -auto-approve
+                        //    '''
+                //}
+            //}
+        //}
     }
 }
 
