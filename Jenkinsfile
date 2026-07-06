@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 checkout scm
-                withEnv(["PATH+MAVEN=${tool 'Maven-3.6.0'}/bin"]) {
+                withEnv(["PATH+MAVEN=${tool 'Maven-3.8.7'}/bin"]) {
                     sh "/Applications/cia/apache-maven-3.6.0/bin/mvn -X clean compile"
                 }
             }
@@ -21,7 +21,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo("Perform Unit Test")
-                withEnv(["PATH+MAVEN=${tool 'Maven-3.6.0'}/bin"]) {
+                withEnv(["PATH+MAVEN=${tool 'Maven-3.8.7}/bin"]) {
                     sh "/Applications/cia/apache-maven-3.6.0/bin/mvn -X clean test"
                 }
 
@@ -40,7 +40,7 @@ pipeline {
 
         stage('Package') {
             steps {
-                withEnv(["PATH+MAVEN=${tool 'Maven-3.6.0'}/bin"]) {
+                withEnv(["PATH+MAVEN=${tool 'Maven-3.8.7'}/bin"]) {
                     sh "/Applications/cia/apache-maven-3.6.0/bin/mvn -X clean deploy"
                 }
 
